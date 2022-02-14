@@ -18,10 +18,10 @@ app.use('/', indexRoute) //or app.use('/', require('./routes/index'))
 
 app.use('/shows', require('./routes/shows'))
 
-app.use('/showDetails', require('./routes/showDetails'))
+app.use('/:details', require('./routes/showDetails'))
 
 app.listen(port, () => {
-  console.log(`YO JOE!  Coming in HOT on http://localhost:${port}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
 // --------------
 

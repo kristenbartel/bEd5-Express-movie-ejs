@@ -6,15 +6,15 @@
 <body>
     <div class="row row-cols-sm-1 row-cols-md-3 row-cols-xl-4" id="showsList">
         <% db.forEach(movie => { %>
-            <div class="card m-1 p-1" style="width: 18rem;">
+            <div class="card" style="width: 18rem;">
             <img src="<%= movie.Images[1] %>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h4 class="card-title"><%= movie.Title %></h4>
                   <h6><%= movie.Year %></h6>
                   <h6><%= movie.Rated %></h6>
                   <p class="card-text"><%= movie.Plot %></p>
-                  <a href="/showDetails" class="btn btn-primary" >Details</a>
-                  <button href="/showDetails/<%=db.imdbID %>" class="btn btn-primary">Details</button>
+                  <button href="/showDetails" class="btn">Details</button>
+                  <!-- <button href="/showDetails/<%=db.imdbID %>" class="btn btn-primary">Details</button> -->
                   
                 </div>
             </div>

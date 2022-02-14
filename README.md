@@ -22,3 +22,26 @@ https://getbootstrap.com/
 https://expressjs.com/
 https://ejs.co/
 https://nodejs.org/en/
+
+
+ router.get('/:Title', (req, res) => {
+    const {Title} = req.params;
+    const showData = db.find(f => f.Title === Title);
+  
+
+    if(showData) {
+         res.render('index', {
+              locals: {
+                   showsData: showData,
+              }, 
+              partials: {
+                 listButton: '/partials/show-details'
+
+              }
+         },
+         )
+    } else {
+       res.status(404).send(`no friend with handle ${Title}`)
+           
+   }
+})
